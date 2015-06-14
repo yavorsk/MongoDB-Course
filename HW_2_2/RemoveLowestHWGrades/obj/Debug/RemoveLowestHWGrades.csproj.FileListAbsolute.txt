@@ -1,0 +1,11 @@
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\RemoveLowestHWGrades.exe.config
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\RemoveLowestHWGrades.exe
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\RemoveLowestHWGrades.pdb
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\MongoDB.Bson.dll
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\MongoDB.Driver.dll
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\MongoDB.Bson.xml
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\bin\Debug\MongoDB.Driver.xml
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\obj\Debug\RemoveLowestHWGrades.csprojResolveAssemblyReference.cache
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\obj\Debug\RemoveLowestHWGrades.exe
+C:\Users\yavor\Desktop\mongo course\MyHomeworks\2_2\HW_2_2\RemoveLowestHWGrades\obj\Debug\RemoveLowestHWGrades.pdb
