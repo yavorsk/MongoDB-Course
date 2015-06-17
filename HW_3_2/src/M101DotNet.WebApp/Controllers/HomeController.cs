@@ -25,6 +25,12 @@ namespace M101DotNet.WebApp.Controllers
                                                 .Limit(10)
                                                 .ToListAsync();
 
+            // Mongo's solution:
+            //var recentPosts = await blogContext.Posts.Find(x => true)
+            //                            .SortByDescending(x => x.CreatedAtUtc)
+            //                            .Limit(10)
+            //                            .ToListAsync();
+
             var model = new IndexModel
             {
                 RecentPosts = recentPosts
@@ -56,7 +62,7 @@ namespace M101DotNet.WebApp.Controllers
                 Content = model.Content,
                 Tags = model.Tags.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries),
                 Author = this.User.Identity.Name,
-                CreatedAtUtc = DateTime.Now.ToUniversalTime(),
+                CreatedAtUtc = DateTime.UtcNow,
                 Comments = new List<Comment>()
             };
             await blogContext.Posts.InsertOneAsync(post);
@@ -72,6 +78,9 @@ namespace M101DotNet.WebApp.Controllers
             // XXX WORK HERE
             // Find the post with the given identifier
             var post = await blogContext.Posts.Find(Builders<Post>.Filter.Eq(p => p.Id, id)).FirstOrDefaultAsync();
+
+            // Mongo's solution
+            //var post = await blogContext.Posts.Find(x => x.Id == id).SingleOrDefaultAsync();
 
             if (post == null)
             {
@@ -101,6 +110,19 @@ namespace M101DotNet.WebApp.Controllers
 
             var posts = await blogContext.Posts.Find(filter).ToListAsync();
 
+            //Mongo's solution:
+            //Expression<Func<Post, bool>> filter = x => true;
+
+            //if (tag != null)
+            //{
+            //    filter = x => x.Tags.Contains(tag);
+            //}
+
+            //var posts = await blogContext.Posts.Find(filter)
+            //    .SortByDescending(x => x.CreatedAtUtc)
+            //    .Limit(10)
+            //    .ToListAsync();
+
             return View(posts);
         }
 
@@ -125,6 +147,11 @@ namespace M101DotNet.WebApp.Controllers
 
             await blogContext.Posts.UpdateOneAsync(p => p.Id == model.PostId,
                                                     Builders<Post>.Update.AddToSet(x => x.Comments, comment));
+
+            // Mongo's solution:
+            //await blogContext.Posts.UpdateOneAsync(
+            //    x => x.Id == model.PostId,
+            //    Builders<Post>.Update.Push(x => x.Comments, comment));
 
             return RedirectToAction("Post", new { id = model.PostId });
         }
